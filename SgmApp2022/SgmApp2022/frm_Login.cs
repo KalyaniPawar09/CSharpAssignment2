@@ -15,12 +15,7 @@ namespace SgmApp2022
         {
             InitializeComponent();
         }
-        private void tb_Username_TextChanged(object sender, EventArgs e)
-        {
-            lbl_Error.Visible = false;
-            tb_Password.Enabled = true;
-
-        }
+    
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
@@ -46,13 +41,16 @@ namespace SgmApp2022
             tb_Username.Focus();
 
         }
+        private void tb_Username_TextChanged(object sender, EventArgs e)
+        {
+            lbl_Error.Visible = false;
+            tb_Password.Enabled = true;
+
+        }
 
         private void tb_Password_TextChanged(object sender, EventArgs e)
         {
             btn_Submit.Enabled = true;
         }
-
-       
-
     }
 }

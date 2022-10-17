@@ -38,19 +38,19 @@
             this.student_App_DBDataSet = new SgmApp2022.Student_App_DBDataSet();
             this.student_DetailsTableAdapter = new SgmApp2022.Student_App_DBDataSetTableAdapters.Student_DetailsTableAdapter();
             this.dgv_Student_Details = new System.Windows.Forms.DataGridView();
-            this.sgmApp2022_DBDataSet1 = new SgmApp2022.SgmApp2022_DBDataSet1();
-            this.studentDetailsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.student_DetailsTableAdapter1 = new SgmApp2022.SgmApp2022_DBDataSet1TableAdapters.Student_DetailsTableAdapter();
             this.rollNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mobileNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentDetailsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sgmApp2022_DBDataSet1 = new SgmApp2022.SgmApp2022_DBDataSet1();
+            this.student_DetailsTableAdapter1 = new SgmApp2022.SgmApp2022_DBDataSet1TableAdapters.Student_DetailsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.studentDetailsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_App_DBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Student_Details)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sgmApp2022_DBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDetailsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sgmApp2022_DBDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_View_All_Student_Details
@@ -133,20 +133,6 @@
             this.dgv_Student_Details.Size = new System.Drawing.Size(798, 393);
             this.dgv_Student_Details.TabIndex = 4;
             // 
-            // sgmApp2022_DBDataSet1
-            // 
-            this.sgmApp2022_DBDataSet1.DataSetName = "SgmApp2022_DBDataSet1";
-            this.sgmApp2022_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentDetailsBindingSource1
-            // 
-            this.studentDetailsBindingSource1.DataMember = "Student_Details";
-            this.studentDetailsBindingSource1.DataSource = this.sgmApp2022_DBDataSet1;
-            // 
-            // student_DetailsTableAdapter1
-            // 
-            this.student_DetailsTableAdapter1.ClearBeforeFill = true;
-            // 
             // rollNoDataGridViewTextBoxColumn
             // 
             this.rollNoDataGridViewTextBoxColumn.DataPropertyName = "RollNo";
@@ -177,11 +163,25 @@
             this.courseDataGridViewTextBoxColumn.HeaderText = "Course";
             this.courseDataGridViewTextBoxColumn.Name = "courseDataGridViewTextBoxColumn";
             // 
+            // studentDetailsBindingSource1
+            // 
+            this.studentDetailsBindingSource1.DataMember = "Student_Details";
+            this.studentDetailsBindingSource1.DataSource = this.sgmApp2022_DBDataSet1;
+            // 
+            // sgmApp2022_DBDataSet1
+            // 
+            this.sgmApp2022_DBDataSet1.DataSetName = "SgmApp2022_DBDataSet1";
+            this.sgmApp2022_DBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // student_DetailsTableAdapter1
+            // 
+            this.student_DetailsTableAdapter1.ClearBeforeFill = true;
+            // 
             // frm_View_All_Student_Details
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 703);
+            this.ClientSize = new System.Drawing.Size(982, 703);
             this.Controls.Add(this.dgv_Student_Details);
             this.Controls.Add(this.btn_Add_New_Student);
             this.Controls.Add(this.btn_Logout);
@@ -197,8 +197,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.studentDetailsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.student_App_DBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Student_Details)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sgmApp2022_DBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDetailsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sgmApp2022_DBDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

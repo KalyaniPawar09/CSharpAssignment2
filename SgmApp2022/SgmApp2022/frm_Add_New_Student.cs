@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace SgmApp2022
 {
-    public partial class frm_Add_New_Student : Form
+    public partial class frm_Add_New_Student:Form
     {
         public frm_Add_New_Student()
         {
@@ -20,7 +20,7 @@ namespace SgmApp2022
         SqlConnection Con = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=SgmApp2022_DB;Integrated Security=True");
         void Con_Open()
         {
-            if (Con.State == ConnectionState.Closed)
+            if (Con.State == ConnectionState.Open)
             {
                 Con.Open();
             }
@@ -28,7 +28,7 @@ namespace SgmApp2022
 
         void Con_Close()
         {
-            if (Con.State == ConnectionState.Open)
+            if (Con.State == ConnectionState.Closed)
             {
                 Con.Close();
             }
@@ -52,6 +52,28 @@ namespace SgmApp2022
             }
         }
 
+        int Auto_Incr()
+        {
+            int Cnt = 0;
+            Con_Open();
+            SqlCommand Cmd = new SqlCommand();
+            Cmd.Connection = Con;
+            Cmd.CommandText = "Select Count(*) From Student_Details";
+            Cnt = Convert.ToInt32(Cmd.ExecuteScalar());
+            if (Cnt > 0)
+            {
+                Cmd.CommandText = "Select Max(RollNo) From Student_Details";
+                Cnt = Convert.ToInt32(Cmd.ExecuteScalar()) + 1;
+
+            }
+            else
+            {
+                Cnt = 12;
+            }
+            Con_Close();
+            return Cnt;
+        }
+
 
         void Clear_Controls()
         {
@@ -69,6 +91,9 @@ namespace SgmApp2022
             tb_RollNo.Focus();
         }
 
+
+
+
         private void btn_View_All_Student_List_Click(object sender, EventArgs e)
         {
             frm_View_All_Student_Details Obj = new frm_View_All_Student_Details();
@@ -76,20 +101,13 @@ namespace SgmApp2022
             this.Hide();
         }
 
-      
-       private void btn_Logout_Click(object sender, EventArgs e)
-        {
-           frm_Login Obj = new frm_Login();
-            Obj.Show();
-            this.Hide();
-        }
-
+           
        private void btn_Save_Click(object sender, EventArgs e)
        {
 
            Con_Open();
 
-           if (tb_RollNo.Text != " " && tb_MobileNo.Text != " " && tb_MobileNo.TextLength == 10 && cmb_Course.Text != " ")
+           if (tb_RollNo.Text !="" && tb_Name.Text !="" && tb_MobileNo.Text !="" && cmb_Course.Text !="")
            {
                SqlCommand Cmd = new SqlCommand();
                Cmd.Connection = Con;
@@ -101,8 +119,8 @@ namespace SgmApp2022
                Cmd.Parameters.Add("DOB", SqlDbType.Date).Value = dtp_DOB.Value.Date;
                Cmd.Parameters.Add("MNo", SqlDbType.Decimal).Value = tb_MobileNo.Text;
                Cmd.Parameters.Add("Course", SqlDbType.NVarChar).Value = cmb_Course.Text;
-
                Cmd.ExecuteNonQuery();
+               
 
                MessageBox.Show("Data Inserted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -120,8 +138,22 @@ namespace SgmApp2022
            }
            Con_Close();
        }
-       
 
+       private void btn_Logout_Click(object sender, EventArgs e)
+       {
+           frm_Login Obj = new frm_Login();
+           Obj.Show();
+           this.Hide();
+       }
+
+       private void btn_Search_Student_Details_Click(object sender, EventArgs e)
+       {
+           frm_Search_Student_Details Obj = new frm_Search_Student_Details();
+           Obj.Show();
+           this.Hide();
+       }
+
+       
 
         }   
     }

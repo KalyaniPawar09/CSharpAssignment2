@@ -43,6 +43,7 @@
             this.cmb_Course = new System.Windows.Forms.ComboBox();
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_View_All_Student_List = new System.Windows.Forms.Button();
+            this.btn_Search_Student_Details = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Add_New_Student
@@ -123,12 +124,13 @@
             this.btn_Logout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Logout.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Logout.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_Logout.Location = new System.Drawing.Point(746, 2);
+            this.btn_Logout.Location = new System.Drawing.Point(791, 12);
             this.btn_Logout.Name = "btn_Logout";
             this.btn_Logout.Size = new System.Drawing.Size(137, 47);
             this.btn_Logout.TabIndex = 6;
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // tb_Name
             // 
@@ -197,7 +199,7 @@
             this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Save.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Save.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_Save.Location = new System.Drawing.Point(155, 583);
+            this.btn_Save.Location = new System.Drawing.Point(25, 583);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(120, 48);
             this.btn_Save.TabIndex = 6;
@@ -211,7 +213,7 @@
             this.btn_View_All_Student_List.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_View_All_Student_List.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_View_All_Student_List.ForeColor = System.Drawing.Color.Cornsilk;
-            this.btn_View_All_Student_List.Location = new System.Drawing.Point(496, 583);
+            this.btn_View_All_Student_List.Location = new System.Drawing.Point(582, 583);
             this.btn_View_All_Student_List.Name = "btn_View_All_Student_List";
             this.btn_View_All_Student_List.Size = new System.Drawing.Size(351, 48);
             this.btn_View_All_Student_List.TabIndex = 7;
@@ -219,11 +221,26 @@
             this.btn_View_All_Student_List.UseVisualStyleBackColor = false;
             this.btn_View_All_Student_List.Click += new System.EventHandler(this.btn_View_All_Student_List_Click);
             // 
+            // btn_Search_Student_Details
+            // 
+            this.btn_Search_Student_Details.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_Search_Student_Details.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Search_Student_Details.Font = new System.Drawing.Font("Rockwell", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search_Student_Details.ForeColor = System.Drawing.Color.Cornsilk;
+            this.btn_Search_Student_Details.Location = new System.Drawing.Point(151, 583);
+            this.btn_Search_Student_Details.Name = "btn_Search_Student_Details";
+            this.btn_Search_Student_Details.Size = new System.Drawing.Size(425, 48);
+            this.btn_Search_Student_Details.TabIndex = 8;
+            this.btn_Search_Student_Details.Text = "Search Student Details";
+            this.btn_Search_Student_Details.UseVisualStyleBackColor = false;
+            this.btn_Search_Student_Details.Click += new System.EventHandler(this.btn_Search_Student_Details_Click);
+            // 
             // frm_Add_New_Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 703);
+            this.ClientSize = new System.Drawing.Size(982, 703);
+            this.Controls.Add(this.btn_Search_Student_Details);
             this.Controls.Add(this.btn_View_All_Student_List);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.cmb_Course);
@@ -267,5 +284,6 @@
         private System.Windows.Forms.ComboBox cmb_Course;
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_View_All_Student_List;
+        private System.Windows.Forms.Button btn_Search_Student_Details;
     }
 }
